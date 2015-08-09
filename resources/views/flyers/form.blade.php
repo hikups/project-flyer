@@ -42,10 +42,10 @@
 				{{ old('description') }}
 			</textarea>
 		</div>
-		<div class="form-group">
+	<!-- 	<div class="form-group">
 			<label for="Photos">Photos:</label>
 			<input type="file" name="Photos" id="Photos" class="form-control" value="{{ old('Photos') }}" required>
-		</div>
+		</div> -->
 		    	
 		<div class="form-group">
 			<button type="submit" class="btn btn-primary">Create Flyer</button>

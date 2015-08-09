@@ -25,8 +25,7 @@ class FlyersController extends Controller
      * @return Response
      */
     public function create()
-    {   
-
+    {  
         return view('flyers.create');
     }
 
@@ -39,8 +38,7 @@ class FlyersController extends Controller
     public function store(FlyerRequest $request)
     {
         Flyer::create($request->all());
-        flash()->succes('Success!', 'Your flyer is created, great Job!.');
-
+        flash()->success('Success!', 'Your flyer is created, great Job!.');
 
         return redirect()->back(); // temporary
 
@@ -52,9 +50,12 @@ class FlyersController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function show($id)
+    public function show($zip, $street)
     {
-        //
+        $flyer = Flyer::locatedAt($zip, $street)->first();
+        
+        return view('flyers.show', compact('flyer'));
+
     }
 
     /**
